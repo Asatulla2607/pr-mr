@@ -16,7 +16,8 @@ function App() {
         <Route path='/recipes' element={<Recipes />} />
         <Route path='/Popular' element={<Popular />} />
         <Route path='/topRated' element={<TopRated />} />
-        <Route path='/movies/detail-page/:id' element={<DetailPage />} />
+        <Route path='/movies/detail-page/:id' element={<DetailPage  />} />
+        
       </Routes>
     </div>
   );

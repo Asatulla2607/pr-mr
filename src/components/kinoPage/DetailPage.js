@@ -14,24 +14,42 @@ const DetailPage = () =>{
         setDetail(data)
     } 
     useEffect(()=>{
-        getDetailPage()
+        getDetailPage();
     },[])
+    const {title, overview, poster_path, runtime} = detail;
     return(
-        <div id="detail">
+        <>
+        <div style={{
+            background:`url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${detail.backdrop_path}')no-repeat center/cover`
+        }} id="detail">
             <div className="container">
-                <div className="detail">
+                
                     {
-                        <div>
-                            <img src={`https://media.themoviedb.org/t/p/w220_and_h330_bestv2/${detail.poster_path}`}/>
-                            <h1>asat</h1>
+                        <div className="detail">
+                            <img src={`https://media.themoviedb.org/t/p/w220_and_h330_bestv2/${poster_path}`}/>
+                            <div className="detail-desc">
+                                <h2>{title}</h2>
+                                <p>{overview}</p>
+                                <h2>
+                                    {Math.floor(runtime / 2)} h {runtime % 60} m
+                                </h2>
+                                <div className="detail-vote">
+                                    <h2>{Math.round(detail.vote_average * 10)}
+                                         <sup>%</sup>
+                                    </h2>
+                                </div>
+                                </div>
+                            
                         </div>
                     }
-                </div>
+                
             </div>
         </div>  
-    ) 
-    
-}
+        <Actor id={id}/>
+        </>
+    ); 
+
+};
 
 export default DetailPage;
 

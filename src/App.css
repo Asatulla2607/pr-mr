@@ -110,5 +110,44 @@ a{
     gap: 10px;
 }
 #detail{
-    padding: 20px 0;
+    padding: 60px 0;
+    position: absolute;
+}
+#detail::after{
+    padding: 60px 0;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(116, 114, 114, 0.733);
+    backdrop-filter: blur(1px);
+}
+.detail{
+    display: flex;
+    align-items: start;
+    position: relative;
+    z-index: 999;
+}
+.detail-vote{
+    width: 75px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: white;
+    border: 5px solid yellow;
+        
+}
+.detail-vote sup{
+    font-size: 15px;
+}
+.detail-desc{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
